@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NovaTech — Modern Solutions for a Better Tomorrow</title>
+<style>
+  :root{
+    --bg-dark:#0a0e1a;
+    --purple:blue;
+    --purple-light:blue;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    color:#111;
+  }
+  a{text-decoration:none;color:inherit;}
+  ul{list-style:none;}
+  img{max-width:100%;display:block;}
+
+  /* NAVBAR */
+  header{
+    background:var(--bg-dark);
+    padding:22px 60px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:700;
+    color:#fff;
+  }
+  .logo-mark{
+    width:28px;height:28px;
+    background:var(--purple);
+    border-radius:8px 0;
+    display:inline-block;
+  }
+  nav ul{
+    display:flex;
+    gap:36px;
+    font-weight:500;
+  }
+  nav a{color:#cfd3e3;transition:color .2s;}
+  nav a.active{color:var(--purple-light);}
+  nav li{position:relative;}
+  nav li.active::after{
+    content:'';
+    position:absolute;
+    left:0;right:0;bottom:-22px;
+    height:2px;
+    background:var(--purple-light);
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:12px 24px;
+    border-radius:999px;
+    font-weight:600;
+    font-size:0.95rem;
+    cursor:pointer;
+    border:none;
+  }
+  .btn-primary{
+    background:linear-gradient(135deg,var(--purple),var(--purple-light));
+    color:#fff;
+  }
+  .btn-outline{
+    background:transparent;
+    border:1.5px solid rgba(255,255,255,0.35);
+    color:#fff;
+  }
+
+  /* HERO */
+  .hero{
+    background:var(--bg-dark);
+    padding:70px 60px 90px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+  }
+  .hero-content{max-width:520px;}
+  .pill{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:rgba(124,92,245,0.15);
+    border:1px solid rgba(124,92,245,0.4);
+    color:#c7bdfb;
+    padding:8px 18px;
+    border-radius:999px;
+    font-size:0.85rem;
+    font-weight:600;
+    margin-bottom:26px;
+  }
+  .hero h1{
+    font-size:3.1rem;
+    line-height:1.15;
+    font-weight:800;
+    color:#fff;
+    margin-bottom:22px;
+  }
+  .hero h1 .accent{color:var(--purple-light);}
+  .hero p{
+    color:var(--text-muted);
+    font-size:1.05rem;
+    line-height:1.6;
+    margin-bottom:34px;
+  }
+  .hero-actions{display:flex;gap:16px;}
+  .hero-image{
+    border-radius:20px;
+    overflow:hidden;
+    background:linear-gradient(135deg,#2a2350,#3a2a55);
+  }
+  .hero-image img{width:200%;height:200%;object-fit:cover;}
+
+  /* SERVICES */
+  .services{
+    padding:90px 60px;
+    text-align:center;
+  }
+  .eyebrow{
+    color:var(--purple);
+    font-weight:700;
+    font-size:0.85rem;
+    letter-spacing:0.5px;
+    margin-bottom:10px;
+  }
+  .services h2{
+    font-size:2.4rem;
+    font-weight:800;
+    margin-bottom:14px;
+    color:#0d0d17;
+  }
+  .services > p{
+    color:#6b7085;
+    font-size:1.05rem;
+    margin-bottom:56px;
+  }
+  .cards{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:26px;
+    max-width:1180px;
+    margin:0 auto;
+  }
+  .card{
+    background:var(--card-bg);
+    border-radius:16px;
+    padding:38px 26px;
+    box-shadow:0 6px 20px rgba(20,20,50,0.06);
+    text-align:center;
+  }
+  .icon-circle{
+    width:60px;height:60px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 22px;
+    font-size:1.4rem;
+  }
+  .icon-purple{background:linear-gradient(135deg,#c2863d,#9c7bff);}
+  .icon-pink{background:linear-gradient(135deg,#7d2c8e,#0ae532);}
+  .icon-green{background:linear-gradient(135deg,#75520b,#6fe0ab);}
+  .icon-blue{background:linear-gradient(135deg,#3b93e8,#7e0909);}
+  .card h3{
+    font-size:1.1rem;
+    font-weight:700;
+    margin-bottom:10px;
+    color:#0d0d17;
+  }
+  .card p{
+    color:#6b7085;
+    font-size:0.92rem;
+    line-height:1.55;
+  }
+ 
+
+  /* FEATURED PROJECTS */
+  .projects-teaser{
+    background:var(--bg-dark);
+    padding:70px 60px 100px;
+    text-align:center;
+  }
+  .projects-teaser .eyebrow{color:var(--purple-light);}
+  .projects-teaser h2{
+    color:#fff;
+    font-size:2.4rem;
+    font-weight:800;
+  }
+  
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo"><span class="logo-mark"></span>NovaTech</div>
+  <nav>
+    <ul>
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Portfolio</a></li>
+      <li><a href="#">Testimonials</a></li>
+    </ul>
+  </nav>
+  <button class="btn btn-primary">Get Started</button>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Modern Solutions for a Better <span class="accent">Tomorrow</span></h1>
+    <p>We build beautiful, fast and responsive websites that help businesses grow online.</p>
+    <div class="hero-actions">
+      <button class="btn btn-primary">Get Started →</button>
+      <button class="btn btn-outline">Learn More Here</button>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img src="C:\Users\HP\Desktop\Web Development\Graphic-laptop.jpg">
+  </div>
+</section>
+
+<section class="services">
+  <div class="eyebrow">OUR SERVICES</div>
+  <h2>What We Offer</h2>
+  <p>Everything you need to build, grow and succeed online.</p>
+  <div class="cards">
+    <div class="card">
+      <div class="icon-circle icon-purple"></div>
+      <h3>Web Development</h3>
+      <p>Custom websites and web applications built with modern technologies.</p>
+    </div>
+    <div class="card">
+      <div class="icon-circle icon-pink"></div>
+      <h3>UI/UX Design</h3>
+      <p>Clean, modern and user-friendly designs that make an impact.</p>
+    </div>
+    <div class="card">
+      <div class="icon-circle icon-green"></div>
+      <h3>Digital Marketing</h3>
+      <p>Grow your brand with strategic online marketing solutions.</p>
+    </div>
+    <div class="card cyber">
+      <div class="icon-circle icon-blue"></div>
+      <h3>Cybersecurity</h3>
+      <p>Keep your data and business safe with expert security solutions.</p>
+    </div>
+  </div>
+</section>
+
+<section class="projects-teaser">
+  <div class="eyebrow">OUR WORK</div>
+  <h2>Featured Projects</h2>
+</section>
+
+</body>
+</html>
